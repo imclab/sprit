@@ -13,7 +13,7 @@ void processImage(cv::Mat &image)
   int tLaplacian = laplacion.type();
   int tGaussian = gaussian.type();
   image = image - gaussian;// + laplacion;
-  //cv::Laplacian(image, image, CV_8U, 15);
+  cv::Laplacian(image, image, CV_8U, 15);
   return;
 }
 
