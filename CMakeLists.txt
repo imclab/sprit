@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.8)
 project(Sprit)
 
 ###	Build Options	#######################################################################
-option(BUILD_EXAMPLES "Build examples" ON)
+option(BUILD_APPS "Build applications" ON)
 
 ###	Configuration	#######################################################################
 # Compiler Flags
@@ -14,11 +14,12 @@ set(CMAKE_CXX_FLAGS_RELEASE ${CMAKE_CXX_FLAGS_RELEASE})
 # Include Directories
 include_directories(${CMAKE_SOURCE_DIR}/src)
 
-###	Subdirectories	######################################################################
-add_subdirectory(apps)
+file(GLOB Sprit_SRC_FILES ${CMAKE_SOURCE_DIR}/src/sprit/*.cpp)
+
+###	Subdirectories	#####################################################################
 add_subdirectory(src)
 
-#if(BUILD_EXAMPLES)
-#	message(STATUS "Examples enabled")
-#	add_subdirectory(examples)
-#endif()
+if(BUILD_APPS)
+  message(STATUS "Applications enabled")
+  add_subdirectory(apps)
+endif()
