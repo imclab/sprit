@@ -13,8 +13,16 @@ void processImage(cv::Mat &image)
   int tLaplacian = laplacion.type();
   int tGaussian = gaussian.type();
   image = image - gaussian;// + laplacion;
-  cv::Laplacian(image, image, CV_8U, 15);
+  //cv::Laplacian(image, image, CV_8U, 15);
   return;
+}
+
+void imshow(const std::string windowTitle, cv::Mat image, float scaling)
+{
+  cv::Mat scaled;
+  cv::resize(image,scaled,cv::Size(image.cols*scaling,image.rows*scaling));
+  cv::imshow(windowTitle, scaled);
+  cv::waitKey(0);
 }
 
 }
