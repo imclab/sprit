@@ -1,6 +1,11 @@
+// C/C++ includes
 #include <stdlib.h>
 #include <iostream>
+
+// OpenCV includes
 #include <opencv2/highgui/highgui.hpp>
+
+// Sprit includes
 #include <sprit/sprit.h>
 
 int main(int agrc, char * argv[])
