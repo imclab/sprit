@@ -7,7 +7,7 @@ option(BUILD_APPS "Build applications" ON)
 ###	Configuration	#######################################################################
 # Compiler Flags
 set(CMAKE_CXX_COMPILER_FLAGS ${CMAKE_CXX_COMPILER_FLAGS} -Wall) # Enables all compiler warnings
-set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} -fPIC) # Generate position independent code
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -std=c++0x") # Generate position independent code
 set(CMAKE_CXX_FLAGS_DEBUG ${CMAKE_CXX_FLAGS_DEBUG}) 
 set(CMAKE_CXX_FLAGS_RELEASE ${CMAKE_CXX_FLAGS_RELEASE})
 
@@ -17,7 +17,7 @@ include_directories(${CMAKE_SOURCE_DIR}/src)
 file(GLOB Sprit_SRC_FILES ${CMAKE_SOURCE_DIR}/src/sprit/*.cpp)
 
 ###	Subdirectories	#####################################################################
-add_subdirectory(src)
+add_subdirectory(${CMAKE_SOURCE_DIR}/src)
 
 if(BUILD_APPS)
   message(STATUS "Applications enabled")
